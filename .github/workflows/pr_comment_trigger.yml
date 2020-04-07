@@ -23,8 +23,8 @@ jobs:
       if: github.event.issue.pull_request
       uses: distributhor/workflow-webhook@v1.0.2
       env:
-        webhook_url: ${{ secrets.WEBHOOK_URL }}
-        webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
+        webhook_url: https://jenkins-mch.cscs.ch/github-webhook/
+        webhook_secret: qBtiHqqsIv
 
 
     # Runs a set of commands using the runners shell
