@@ -19,4 +19,8 @@ pipeline {
             }
         }
     }
+    
+    triggers {
+        issueCommentTrigger('launch jenkins')
+    }
 }
