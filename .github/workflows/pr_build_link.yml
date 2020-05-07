@@ -14,5 +14,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: 'On jenkins: https://jenkins-mch.cscs.ch/job/MeteoSwiss-APN/job/' + context.issue.repo +'/view/change-requests/job/PR-' + context.issue.issue_number +'/'
+              body: 'On jenkins: https://jenkins-mch.cscs.ch/job/MeteoSwiss-APN/job/' + context.issue.repo +'/view/change-requests/job/PR-' + context.issue.number +'/'
             })
