@@ -1,4 +1,14 @@
-# Template repo for new CI configuration (GitHub Branch Source plugin for Jenkins)
+# Template repository for new CI configuration (GitHub Branch Source plugin for Jenkins)
+
+Since the old jenkins plugin for PRs ([Jenkins Pull Request Builder plugin](https://plugins.jenkins.io/ghprb/)) is not maintained anymore, we decided to migrate to a new configuration for building the code of pull requests.
+
+In this new configuration we are using the [Github Branch Source plugin](https://plugins.jenkins.io/github-branch-source/), which recognizes pull requests of repositories under the MeteoSwiss-APN GitHub organization (or their forks from authorized users) and automatically adds "jobs" on Jenkins for them. It is then possible to launch the build of such jobs by navigating to their page (on Jenkins): `Jenkins - MeteoSwiss-APN GitHub - <repository> - Pull Requests - PR-<PR_ID>`.
+
+Since navigating to the Jenkins page takes some time, we are using a GitHub Workflow script that adds a comment to a newly opened PR with the link to the relative job on Jenkins. From there, a logged user, can hit the "Build Now" button.
+
+Unfortunately there is no way to avoid doing this when you want to build a new PR for the first time. However, after the first build, one can write the usual comment "launch jenkins" on the PR page on GitHub to re-trigger the build.
+
+## Setup instructions
 
 - You must have a `Jenkinsfile` in the root of the repo defining how your project is built/tested/deployed. Don't forget the last 3 lines which are needed for building by PR comment.
 ```
