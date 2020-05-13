@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'gcc --version'
+                sh 'gcc main.cpp -o main.o'
             }
         }
         stage('Test') {
